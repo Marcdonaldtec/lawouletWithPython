@@ -15,18 +15,26 @@ def exercice6(text):
     return  print(text[::-1].upper())
 def exercice7(text):
     try:
-        print(text.index("z"))
+        print(text.index("a"))
     except ValueError:
-        print("Char 'z' was not  found in the sentence")
+        print("Char 'a' was not  found in the sentence")
 def exercice8(text):
-    return  print(text.split())
+    indices_a = [i for i, char in enumerate(text) if char.lower() == 'a']
+    sum = 0
+    for i in indices_a:
+        sum +=i
+    print(sum)
 def exercice9(text):
-    return  print(text.split())
+    indices_a = [i for i, char in enumerate(text) if char.lower() == 'a']
+    print(indices_a)
 def exercice10(text):
-    return  print(text.split())
-
+    removeSpace = text.replace(" ","")
+    print("Your string without space is :",removeSpace)
+    # countChar = removeSpace.len()
+    print("The nomber of char is :", len(removeSpace))
+    
 if __name__=="__main__":
-    choice = '11'
+    
     while True:
 
         print("\t=====Manipulate that string======")
@@ -50,64 +58,31 @@ if __name__=="__main__":
             exercice2(text)
         elif choice =='3':
             text = input("Enter a string\n")
-            exercice2(text)
+            exercice3(text)
         elif choice =='4':
             text = input("Enter a string\n")
-            exercice2(text)
+            exercice4(text)
         elif choice =='5':
             text = input("Enter a string\n")
-            exercice2(text)
+            exercice5(text)
         elif choice =='6':
             text = input("Enter a string\n")
-            exercice2(text)
+            exercice6(text)
         elif choice =='7':
             text = input("Enter a string\n")
-            exercice2(text)
+            exercice7(text)
         elif choice =='8':
-            exercice2(text)
+            text = input("Enter a string\n")
+            exercice8(text)
         elif choice =='9':
-            exercice2(text)
+            text = input("Enter a string\n")
+            exercice9(text)
         elif choice =='10':
-            exercice2(text)
+            text = input("Enter a string\n")
+            exercice10(text)
         elif choice == '11':
             break
-       
-# # exo 1
-# text = " Hello Everybody this is Marc Donald OMEUS"
-
-# # exo 2 
-# print(text.split())
-
-# # exo 3
-# print(text.title())
-
-# # exo 4
-# firstLetter = [letter[0] for letter in text.split()]
-# print(firstLetter)
-# newString = ''.join(firstLetter)
-# print(newString)
-
-# exo 5
-# print(text.replace("a","@"))
-
-# # exo 6
-# print(text[::-1].upper())
-
-# # exo 7
-# try:
-#     print(text.index("z"))
-# except ValueError:
-#     print("Char 'z' was not  found in the sentence")
-# # exo 8
-# print(text.lower().count("a"))
-# indexCharA = text.index("a")
-# summ = 0
-# i =0
-# while True:
-#     if indexCharA:
-#         summ +=indexCharA
-#         i +=1
-#         break
-#     print(summ)   
-    
+        else:
+            print("You're wrong")
+        
 
